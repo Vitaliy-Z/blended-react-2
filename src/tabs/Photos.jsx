@@ -23,19 +23,19 @@ const Photos = () => {
       return;
     }
 
-    try {
-      getPhotos(query, page).then(data => {
+    getPhotos(query, page)
+      .then(data => {
         setImages(prev => [...prev, ...data.photos]);
         data.total_results > page * 15
           ? setIsVisiblLoadMore(true)
           : setIsVisiblLoadMore(false);
+      })
+      .catch(error => {
+        setError(error);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
-    } catch (error) {
-      console.log('error:', error);
-      setError(error);
-    }
-
-    setIsLoading(false);
   }, [query, page]);
 
   const handleSubmit = async searchValue => {
