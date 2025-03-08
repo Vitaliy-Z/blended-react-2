@@ -25,7 +25,6 @@ const Photos = () => {
 
     try {
       getPhotos(query, page).then(data => {
-        console.log(' data:', data);
         setImages(prev => [...prev, ...data.photos]);
         data.total_results > page * 15
           ? setIsVisiblLoadMore(true)
