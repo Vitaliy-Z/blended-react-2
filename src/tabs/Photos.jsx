@@ -53,7 +53,7 @@ const Photos = () => {
       <Form onSubmit={handleSubmit} />
       {images.length > 0 && <PhotosGallery images={images} />}
       {isVisiblLoadMore && <Button onClick={handleLoadMore}>Load More</Button>}
-      {error && <Text>Error: {error.message}</Text>}
+      {error && <Text>Error! Try again later! </Text>}
     </>
   );
 };
