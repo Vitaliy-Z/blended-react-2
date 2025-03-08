@@ -1,15 +1,10 @@
-import { InfinitySpin } from 'react-loader-spinner';
+import { SyncLoader } from 'react-spinners';
 import css from './Loader.module.css';
 
 const Loader = () => {
   return (
     <div className={css.backdrop}>
-      <InfinitySpin
-        visible={true}
-        width="200"
-        color="#4fa94d"
-        ariaLabel="infinity-spin-loading"
-      />
+      <SyncLoader loading={true} color="#4fa94d" />
     </div>
   );
 };
