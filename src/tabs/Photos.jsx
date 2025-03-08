@@ -40,6 +40,7 @@ const Photos = () => {
 
   const handleSubmit = async searchValue => {
     setImages([]);
+    setPage(1);
     setQuery(searchValue);
   };
 
